@@ -1,0 +1,6 @@
+FROM node:latest
+ADD . ./sourcebook
+WORKDIR ./sourcebook/docs
+RUN npm install -g docsify-cli@latest
+EXPOSE 3000/tcp
+ENTRYPOINT docsify serve .
